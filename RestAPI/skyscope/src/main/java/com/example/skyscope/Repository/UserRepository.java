@@ -1,11 +1,12 @@
 package com.example.skyscope.Repository;
-import org.springframework.stereotype.Repository;
+
+import org.apache.ibatis.annotations.Mapper;
 
 import com.example.skyscope.Entity.User;
 
-@Repository
+@Mapper
 public interface UserRepository {
 
-    void addUser(User user);
-    
+     void addUser(User user);
+
 }
