@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.skyscope.Repository.UserRepository">
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO user (username, password_hash, first_name, last_name, email, role)
+        VALUES (#{userName}, #{password}, #{firstName}, #{lastName}, #{email}, #{role})
+    </insert>
+
+</mapper>
