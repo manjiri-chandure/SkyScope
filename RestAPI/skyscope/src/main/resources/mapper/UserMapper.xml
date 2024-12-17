@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.skyscope.Repository.UserRepository">
+
+    <insert id="addUser" useGeneratedKeys="true" parameterType="com.example.skyscope.Entity.User" keyProperty="id" keyColumn="id" >
+        INSERT INTO "user" (username, password_hash, first_name, last_name, email, role)
+        VALUES (#{userName}, #{password}, #{firstName}, #{lastName}, #{email}, #{role})
+    </insert>
+
+    <resultMap id="mapUser" type="com.example.skyscope.Entity.User" >
+        <id column="id" property="id"/>
+        <result column="username" property="userName"/>
+        <result column="email" property="email"/>
+        <result column="password_hash" property="password"/>
+        <result column="first_name" property="firstName"/>
+        <result column="last_name" property="lastName"/>
+        <result column="role" property="role"/>
+    </resultMap>
+
+    <select id="getUserByUserName"
+              resultMap="mapUser" parameterType="java.lang.String" resultType="java.util.Optional">
+        select id, username, email, password_hash, first_name, last_name, role 
+        from "user" where username = #{userName}
+    </select>
+
+</mapper>
