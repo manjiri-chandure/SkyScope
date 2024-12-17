@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.skyscope.Dto.JwtResponseDto;
+import com.example.skyscope.Dto.UserLoginDto;
 import com.example.skyscope.Dto.UserRequestDto;
 import com.example.skyscope.Dto.UserResponseDto;
 import com.example.skyscope.Service.UserService;
@@ -30,8 +32,9 @@ public class UserController {
                 return new ResponseEntity<>(userResponseDto, HttpStatus.CREATED);
         }
 
-        @GetMapping("/login")
-        public String loginUser(){
-                return "";
+        @PostMapping("/login")
+        public ResponseEntity<JwtResponseDto> loginUser(@Valid @RequestBody UserLoginDto userLoginDetails){
+               JwtResponseDto jwtToken =  this.userService.loginUser(userLoginDetails);
+               return new ResponseEntity<>(jwtToken, HttpStatus.CREATED);
         }
 }
