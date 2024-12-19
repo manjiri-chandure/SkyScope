@@ -2,8 +2,6 @@ package com.example.skyscope.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException.Unauthorized;
-
 import com.example.skyscope.Dto.UserResponseDto;
 import com.example.skyscope.Entity.User;
 import com.example.skyscope.Exception.InvalidUser;

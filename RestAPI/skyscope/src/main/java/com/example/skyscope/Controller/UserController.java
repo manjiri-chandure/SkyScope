@@ -3,7 +3,6 @@ package com.example.skyscope.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +13,6 @@ import com.example.skyscope.Dto.UserLoginDto;
 import com.example.skyscope.Dto.UserRequestDto;
 import com.example.skyscope.Dto.UserResponseDto;
 import com.example.skyscope.Service.UserService;
-
-
 import jakarta.validation.Valid;
 
 @RestController
