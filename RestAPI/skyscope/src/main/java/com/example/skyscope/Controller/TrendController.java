@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.skyscope.Dto.TrendTopicDto;
+
+import com.example.skyscope.Dto.Trend.TrendTopicDto;
 
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
