@@ -4,8 +4,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.example.skyscope.Entity.User;
-import com.example.skyscope.Dto.UserRequestDto;
-import com.example.skyscope.Dto.UserResponseDto;
+import com.example.skyscope.Dto.User.UserRequestDto;
+import com.example.skyscope.Dto.User.UserResponseDto;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {

@@ -2,14 +2,14 @@ package com.example.skyscope.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.skyscope.Dto.UserResponseDto;
+import com.example.skyscope.Dto.User.UserResponseDto;
 import com.example.skyscope.Entity.User;
 import com.example.skyscope.Exception.InvalidUser;
 import com.example.skyscope.Exception.UserAlreadyExistsException;
 import com.example.skyscope.JwtConfig.JwtTokenUtil;
-import com.example.skyscope.Dto.JwtResponseDto;
-import com.example.skyscope.Dto.UserLoginDto;
-import com.example.skyscope.Dto.UserRequestDto;
+import com.example.skyscope.Dto.Jwt.JwtResponseDto;
+import com.example.skyscope.Dto.User.UserLoginDto;
+import com.example.skyscope.Dto.User.UserRequestDto;
 import com.example.skyscope.Mapper.UserMapper;
 import com.example.skyscope.Repository.UserRepository;
 

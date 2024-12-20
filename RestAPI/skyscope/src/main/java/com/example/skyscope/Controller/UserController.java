@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.skyscope.Dto.JwtResponseDto;
-import com.example.skyscope.Dto.UserLoginDto;
-import com.example.skyscope.Dto.UserRequestDto;
-import com.example.skyscope.Dto.UserResponseDto;
+import com.example.skyscope.Dto.Jwt.JwtResponseDto;
+import com.example.skyscope.Dto.User.UserLoginDto;
+import com.example.skyscope.Dto.User.UserRequestDto;
+import com.example.skyscope.Dto.User.UserResponseDto;
 import com.example.skyscope.Service.UserService;
 import jakarta.validation.Valid;
 
