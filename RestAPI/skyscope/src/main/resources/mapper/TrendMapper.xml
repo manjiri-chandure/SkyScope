@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.skyscope.Repository.TrendRepository">
+
+    <insert id="addTrend" useGeneratedKeys="true" parameterType="com.example.skyscope.Entity.Trend" keyProperty="id" keyColumn="id" >
+        INSERT INTO trend (topic, summary, user_id, status, progress)
+        VALUES (#{topic}, #{summary}, #{userId}, #{status}, #{progress})
+    </insert>
+
+    <resultMap id="mapTrend" type="com.example.skyscope.Entity.Trend" >
+        <id column="id" property="id"/>
+        <result column="topic" property="topic"/>
+        <result column="summary" property="summary"/>
+        <result column="user_id" property="userId"/>
+        <result column="status" property="status"/>
+        <result column="progress" property="progress"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="modified_at" property="modifiedAt"/>
+    </resultMap>
+
+    <select id="getTrendById"
+              resultMap="mapTrend" parameterType="java.lang.Long" resultType="java.util.Optional">
+        select id, topic, summary, user_id, status, progress, created_at, modified_at 
+        from trend where id = #{id}
+    </select>
+
+    <select id="getTrendByUserId" resultMap="mapTrend" parameterType="java.lang.Long">
+        SELECT id, topic, summary, user_id, status, progress, created_at, modified_at
+        FROM trend
+        WHERE user_id = #{userId}
+    </select>
+
+</mapper>
